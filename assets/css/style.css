@@ -83,6 +83,12 @@ a i {
 	pointer-events: none;
 }
 
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
 /***************** Reusable *******************/
 .container {
 	max-width: var(--container-mw);
