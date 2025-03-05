@@ -47,18 +47,19 @@ body {
 	overflow-x: hidden;
 }
 
-body.light {
+body.__light {
 	color: var(--black-color-00);
 	background-color: var(--primary-light-color);
 }
 
-body.dark {
+body.__dark {
 	color: var(--secondary-light-color);
 	background-color: var(--primary-dark-color);
 }
 
 a {
 	text-decoration: none;
+	color: inherit;
 }
 
 ul {
