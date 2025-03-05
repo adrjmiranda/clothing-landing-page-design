@@ -1,0 +1,90 @@
+/***************** Imports *******************/
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+/***************** Variables *******************/
+:root {
+	/* Colors */
+	--black-color-00: #0c0d02;
+
+	--primary-light-color: #cbdad5;
+	--secondary-light-color: #fffff7;
+	--primary-dark-color: #34344e;
+	--secondary-dark-color: #3a415a;
+
+	/* Font Family */
+	--text-ff: 'Lora', serif;
+
+	/* Padding */
+	--container-pi: 0.85rem;
+	--section-pb: 3.5rem;
+
+	/* Width */
+	--container-mw: 1280px;
+}
+
+/***************** General *******************/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: var(--text-ff);
+}
+
+html,
+body {
+	scroll-behavior: smooth;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+body.light {
+	color: var(--black-color-00);
+	background-color: var(--primary-light-color);
+}
+
+body.dark {
+	color: var(--secondary-light-color);
+	background-color: var(--primary-dark-color);
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	display: flex;
+	list-style: none;
+}
+
+input,
+button {
+	border: none;
+	background-color: transparent;
+	outline: none;
+}
+
+button {
+	cursor: pointer;
+}
+
+button i,
+a i {
+	pointer-events: none;
+}
+
+/***************** Reusable *******************/
+.container {
+	max-width: var(--container-mw);
+	padding-inline: var(--container-pi);
+	margin: 0 auto;
+}
+
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/***************** Responsiveness *******************/
