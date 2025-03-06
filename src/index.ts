@@ -59,3 +59,43 @@ toggleNavbarMenuButton?.addEventListener('click', () => {
 		toggleNavbarMenuButton?.querySelectorAll('i') as NodeListOf<HTMLElement>
 	)?.forEach((icon) => icon.classList.toggle(HIDDEN_CLASS));
 });
+
+/**
+ * Products Slider
+ */
+const productItemsBox = document.querySelector(
+	'.product-items'
+) as HTMLDivElement;
+
+let isMouseDown: boolean = false;
+let startX: number;
+let scrollLeft: number;
+
+productItemsBox.addEventListener('mousedown', (e: MouseEvent) => {
+	isMouseDown = true;
+	startX = e.pageX - productItemsBox.offsetLeft;
+	scrollLeft = productItemsBox.scrollLeft;
+
+	productItemsBox.style.cursor = 'grabbing';
+});
+
+productItemsBox.addEventListener('mouseleave', () => {
+	isMouseDown = false;
+	productItemsBox.style.cursor = 'grab';
+});
+
+productItemsBox.addEventListener('mouseup', () => {
+	isMouseDown = false;
+	productItemsBox.style.cursor = 'grab';
+});
+
+productItemsBox.addEventListener('mousemove', (e: MouseEvent) => {
+	if (!isMouseDown) return;
+
+	e.preventDefault();
+
+	const x: number = e.pageX - productItemsBox.offsetLeft;
+	const walk: number = (x - startX) * 2;
+
+	productItemsBox.scrollLeft = scrollLeft - walk;
+});

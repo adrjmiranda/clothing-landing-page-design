@@ -471,7 +471,12 @@ body.__dark #toggle-menu {
 .product-items {
 	display: flex;
 	gap: 2%;
-	overflow-x: hidden;
+	overflow-x: auto;
+	scrollbar-width: none;
+}
+
+.product-items::-webkit-scrollbar {
+	display: none;
 }
 
 .product-card {
