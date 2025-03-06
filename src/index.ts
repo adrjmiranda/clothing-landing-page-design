@@ -99,3 +99,106 @@ productItemsBox.addEventListener('mousemove', (e: MouseEvent) => {
 
 	productItemsBox.scrollLeft = scrollLeft - walk;
 });
+
+/**
+ * Scroll Reveal Animation
+ */
+import ScrollReveal from 'scrollreveal';
+
+// Home
+ScrollReveal().reveal('.home-text', {
+	opacity: 0,
+	origin: 'top',
+	distance: '30%',
+	duration: 1750,
+	delay: 250,
+	easing: 'ease-in-out',
+	mobile: true,
+	reset: true,
+});
+
+ScrollReveal().reveal('.home-img', {
+	opacity: 0,
+	origin: 'bottom',
+	distance: '30%',
+	duration: 1750,
+	delay: 250,
+	easing: 'ease-in-out',
+	mobile: true,
+	reset: true,
+});
+
+// News
+const newItemsNumber: number =
+	(document.querySelectorAll('.new-card') as NodeListOf<HTMLDivElement>)
+		?.length ?? 0;
+
+for (let i = 0; i < newItemsNumber; i++) {
+	ScrollReveal().reveal(`.new-card:nth-child(${i + 1})`, {
+		opacity: 0,
+		origin: 'bottom',
+		distance: '5%',
+		duration: 1750,
+		delay: 250 * (i + 1),
+		easing: 'ease-in-out',
+		mobile: true,
+		reset: true,
+	});
+}
+
+// Collection
+ScrollReveal().reveal('.collection-card:nth-child(1)', {
+	opacity: 0,
+	origin: 'right',
+	distance: '15%',
+	duration: 1750,
+	delay: 250,
+	easing: 'ease-in-out',
+	mobile: true,
+	reset: true,
+});
+
+ScrollReveal().reveal('.collection-card:nth-child(2)', {
+	opacity: 0,
+	origin: 'left',
+	distance: '15%',
+	duration: 1750,
+	delay: 250,
+	easing: 'ease-in-out',
+	mobile: true,
+	reset: true,
+});
+
+// Products
+const productCardsNumber: number =
+	(document.querySelectorAll('.product-card') as NodeListOf<HTMLDivElement>)
+		?.length ?? 0;
+
+for (let i = 0; i < productCardsNumber; i++) {
+	ScrollReveal().reveal(`.product-card:nth-child(${i + 1})`, {
+		opacity: 0,
+		origin: 'bottom',
+		distance: '5%',
+		duration: 1750,
+		delay: 250 * (i + 1),
+		easing: 'ease-in-out',
+		mobile: true,
+		reset: true,
+	});
+}
+
+// Brands
+const brandItemsNumber: number =
+	(document.querySelectorAll('.brand-img') as NodeListOf<HTMLDivElement>)
+		?.length ?? 0;
+
+for (let i = 0; i < brandItemsNumber; i++) {
+	ScrollReveal().reveal(`.brand-img:nth-child(${i + 1})`, {
+		opacity: 0,
+		duration: 1750,
+		delay: 150 * (i + 1),
+		easing: 'ease-in-out',
+		mobile: true,
+		reset: true,
+	});
+}

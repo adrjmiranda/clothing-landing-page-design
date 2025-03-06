@@ -623,6 +623,7 @@ body.__dark #toggle-menu {
 
 .credit-content {
 	font-size: var(--sm-fs);
+	text-align: center;
 }
 
 .credit-content span,
@@ -798,6 +799,10 @@ body.__dark #toggle-menu {
 	}
 
 	/***************** HOME *******************/
+	.home-content {
+		padding-top: 2.5rem;
+	}
+
 	.home-img img {
 		width: 65%;
 		height: 75%;
