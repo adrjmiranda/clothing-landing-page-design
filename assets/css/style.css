@@ -11,6 +11,8 @@
 	--primary-dark-color: #34344e;
 	--secondary-dark-color: #3a415a;
 
+	--light-gray-color-00: rgba(0, 0, 0, 0.015);
+
 	/* Font Family */
 	--text-ff: 'Lora', serif;
 
@@ -503,7 +505,7 @@ img {
 	width: 100%;
 	object-fit: contain;
 	object-position: center center;
-	background-color: rgba(0, 0, 0, 0.025);
+	background-color: var(--light-gray-color-00);
 	padding: 1.75rem 0.85rem;
 }
 
@@ -515,5 +517,45 @@ img {
 	margin-bottom: -2rem;
 }
 /************** End of BRANDS ***************/
+
+/***************** FOOTER *******************/
+#footer {
+	padding-block: 3.5rem;
+	background-color: var(--light-gray-color-00);
+}
+
+.footer-columns {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: auto;
+	column-gap: 3%;
+}
+
+.footer-column {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.footer-list {
+	flex-direction: column;
+	gap: 0.55rem;
+}
+
+.footer-description {
+	text-align: justify;
+	font-size: var(--sm-fs);
+	line-height: 1.5;
+}
+
+.footer-description::first-letter {
+	margin-left: 1.5rem;
+}
+
+.footer-title {
+	font-size: var(--base-fs);
+	font-weight: var(--medium-fw);
+}
+/************** End of FOOTER ***************/
 
 /***************** Responsiveness *******************/
