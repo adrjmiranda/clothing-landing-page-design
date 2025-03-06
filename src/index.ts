@@ -24,15 +24,22 @@ window.onscroll = function () {
 /**
  * Change Page Theme
  */
-const toggleThemeButton = document.getElementById(
-	'toggle-theme'
-) as HTMLButtonElement;
+const toggleThemeButtons = document.querySelectorAll(
+	'.toggle-theme'
+) as NodeListOf<HTMLButtonElement>;
 
-toggleThemeButton?.addEventListener('click', () => {
-	(toggleThemeButton.querySelectorAll('i') as NodeListOf<HTMLElement>)?.forEach(
-		(icon) => icon.classList.toggle(HIDDEN_CLASS)
-	);
+toggleThemeButtons?.length &&
+	toggleThemeButtons.forEach((button) => {
+		button?.addEventListener('click', () => {
+			// Update Icon
+			toggleThemeButtons.forEach((btn) =>
+				(btn.querySelectorAll('i') as NodeListOf<HTMLElement>)?.forEach(
+					(icon) => icon.classList.toggle(HIDDEN_CLASS)
+				)
+			);
 
-	document.body.classList.toggle(LIGHT__CLASS);
-	document.body.classList.toggle(DARK__CLASS);
-});
+			// Updated Theme
+			document.body.classList.toggle(LIGHT__CLASS);
+			document.body.classList.toggle(DARK__CLASS);
+		});
+	});

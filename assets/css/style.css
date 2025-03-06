@@ -212,6 +212,16 @@ body.__dark #toggle-menu {
 	text-align: center;
 }
 
+.toggle-theme {
+	font-weight: var(--bold-fw);
+	font-size: var(--lg-fs);
+	opacity: 0.55;
+}
+
+.toggle-theme:hover {
+	opacity: 1;
+}
+
 /***************** NAVBAR *******************/
 #navbar {
 	height: var(--navbar-h);
@@ -243,16 +253,6 @@ body.__dark #toggle-menu {
 .navbar-menu {
 	gap: 1.5rem;
 	align-items: center;
-}
-
-#toggle-theme {
-	font-weight: var(--bold-fw);
-	font-size: var(--lg-fs);
-	opacity: 0.55;
-}
-
-#toggle-theme:hover {
-	opacity: 1;
 }
 /************** End of NAVBAR ***************/
 
@@ -621,8 +621,58 @@ body.__dark #toggle-menu {
 /************** End of CREDIT AREA ***************/
 
 /***************** Responsiveness *******************/
-@media (max-width: 1280px) {
+@media screen and (max-width: 1280px) {
+	/***************** COLLECTION *******************/
 	.collection-card {
 		height: 55vw;
 	}
+	/************** End of COLLECTION ***************/
+}
+
+@media screen and (max-width: 640px) {
+	/***************** NAVBAR *******************/
+	#navbar {
+		height: auto;
+		padding-block: 1.5rem;
+	}
+
+	.navbar-content {
+		flex-wrap: wrap;
+	}
+
+	#toggle-menu {
+		display: flex;
+	}
+
+	.navbar-menu {
+		display: none;
+		flex-direction: column;
+		gap: 1rem;
+		padding-top: 1.25rem;
+		width: 100%;
+	}
+
+	#toggle-theme {
+		display: none;
+	}
+
+	.toggle-theme.mobile {
+		display: flex;
+		position: fixed;
+		bottom: 2.5rem;
+		right: 1.5rem;
+		background-color: var(--secondary-light-color);
+		padding: 0.85rem;
+		box-shadow: 1px 1px 25px 5px var(--light-gray-color-00);
+		border-radius: 50%;
+		font-size: var(--xl-fs);
+		z-index: 50;
+	}
+	/************** End of NAVBAR ***************/
+
+	/***************** HOME *******************/
+	#home {
+		margin-top: unset;
+	}
+	/************** End of HOME ***************/
 }
