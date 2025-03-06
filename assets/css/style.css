@@ -69,32 +69,6 @@ body {
 	z-index: 0;
 }
 
-body.__light {
-	color: var(--secondary-dark-color);
-	background-color: var(--secondary-light-color);
-}
-
-body.__dark {
-	color: var(--secondary-light-color);
-	background-color: var(--secondary-dark-color);
-}
-
-body.__light #home,
-body.__light #navbar,
-body.__light #collection {
-	background-color: var(--primary-light-color);
-}
-
-body.__dark #home,
-body.__dark #navbar,
-body.__dark #collection {
-	background-color: var(--primary-dark-color);
-}
-
-body.__light .alt-text {
-	color: var(--black-color-00);
-}
-
 a {
 	text-decoration: none;
 	color: inherit;
@@ -134,6 +108,48 @@ img {
 
 :is(h1, h2, h3, h4, h5, h6) {
 	font-weight: var(--bold-fw);
+}
+
+/***************** Toggle Theme *******************/
+body.__light {
+	color: var(--secondary-dark-color);
+	background-color: var(--secondary-light-color);
+}
+
+body.__dark {
+	color: var(--secondary-light-color);
+	background-color: var(--secondary-dark-color);
+	--light-gray-color-00: rgba(255, 255, 255, 0.015);
+}
+
+body.__light #home,
+body.__light #navbar,
+body.__light #collection {
+	background-color: var(--primary-light-color);
+}
+
+body.__dark #home,
+body.__dark #navbar,
+body.__dark #collection {
+	background-color: var(--primary-dark-color);
+}
+
+body.__light .alt-text {
+	color: var(--black-color-00);
+}
+
+body.__dark .alt-text {
+	color: var(--primary-light-color);
+}
+
+body.__light #credit-area {
+	background-color: var(--primary-dark-color);
+	color: var(--secondary-light-color);
+}
+
+body.__dark #credit-area {
+	color: var(--primary-dark-color);
+	background-color: var(--secondary-light-color);
 }
 
 /***************** Reusable *******************/
@@ -557,5 +573,20 @@ img {
 	font-weight: var(--medium-fw);
 }
 /************** End of FOOTER ***************/
+
+/***************** CREDIT AREA *******************/
+#credit-area {
+	padding-block: 0.55rem;
+}
+
+.credit-content {
+	font-size: var(--sm-fs);
+}
+
+.credit-content span,
+.credit-content a {
+	font-weight: var(--semibold-fw);
+}
+/************** End of CREDIT AREA ***************/
 
 /***************** Responsiveness *******************/
