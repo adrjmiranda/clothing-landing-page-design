@@ -52,13 +52,28 @@ const toggleNavbarMenuButton = document.getElementById(
 ) as HTMLButtonElement;
 const navbarMenu = document.querySelector('.navbar-menu') as HTMLUListElement;
 
-toggleNavbarMenuButton?.addEventListener('click', () => {
+const navbarMenuLinks = document.querySelectorAll(
+	'.navbar-link'
+) as NodeListOf<HTMLAnchorElement>;
+
+const toggleMenu = (): void => {
 	navbarMenu?.classList.toggle(SHOW__CLASS);
 
 	(
 		toggleNavbarMenuButton?.querySelectorAll('i') as NodeListOf<HTMLElement>
 	)?.forEach((icon) => icon.classList.toggle(HIDDEN_CLASS));
+};
+
+toggleNavbarMenuButton?.addEventListener('click', () => {
+	toggleMenu();
 });
+
+navbarMenuLinks?.length &&
+	navbarMenuLinks.forEach((link) =>
+		link.addEventListener('click', () => {
+			toggleMenu();
+		})
+	);
 
 /**
  * Products Slider
