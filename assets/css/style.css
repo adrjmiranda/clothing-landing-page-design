@@ -198,10 +198,12 @@ body.__dark #credit-area {
 	left: 0;
 	width: 100%;
 	z-index: 100;
+	transition: 0.35s ease-in-out;
 }
 
 #navbar.active {
 	background-color: var(--secondary-light-color) !important;
+	box-shadow: 1px 1px 25px 5px var(--light-gray-color-00);
 }
 
 .navbar-content {

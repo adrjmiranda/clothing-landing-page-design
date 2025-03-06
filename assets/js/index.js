@@ -1,1 +1,1 @@
-console.log("It's working!");
+(()=>{var l=document.getElementById("navbar");window.onscroll=function(){window.scrollY>0?null==l||l.classList.add("active"):null==l||l.classList.remove("active")}})();
