@@ -148,7 +148,7 @@ body.__dark #navbar.active .navbar-link.alt-text {
 }
 
 body.__dark #navbar.active .logo,
-body.__dark #navbar.active #toggle-theme {
+body.__dark #navbar.active .toggle-theme {
 	color: var(--secondary-dark-color);
 }
 
@@ -220,6 +220,14 @@ body.__dark #toggle-menu {
 
 .toggle-theme:hover {
 	opacity: 1;
+}
+
+.toggle-theme.desktop {
+	display: flex;
+}
+
+.toggle-theme.mobile {
+	display: none;
 }
 
 /***************** NAVBAR *******************/
@@ -388,7 +396,6 @@ body.__dark #toggle-menu {
 	display: grid;
 	grid-template-columns: repeat(21, 1fr);
 	grid-template-rows: repeat(4, auto);
-	/* column-gap: 3.75rem; */
 }
 
 .collection-card {
@@ -652,7 +659,7 @@ body.__dark #toggle-menu {
 		width: 100%;
 	}
 
-	#toggle-theme {
+	.toggle-theme.desktop {
 		display: none;
 	}
 

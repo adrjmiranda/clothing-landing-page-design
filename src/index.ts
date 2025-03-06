@@ -43,3 +43,19 @@ toggleThemeButtons?.length &&
 			document.body.classList.toggle(DARK__CLASS);
 		});
 	});
+
+/**
+ * Toggle Menu
+ */
+const toggleNavbarMenuButton = document.getElementById(
+	'toggle-menu'
+) as HTMLButtonElement;
+const navbarMenu = document.querySelector('.navbar-menu') as HTMLUListElement;
+
+toggleNavbarMenuButton?.addEventListener('click', () => {
+	navbarMenu?.classList.toggle(SHOW__CLASS);
+
+	(
+		toggleNavbarMenuButton?.querySelectorAll('i') as NodeListOf<HTMLElement>
+	)?.forEach((icon) => icon.classList.toggle(HIDDEN_CLASS));
+});
