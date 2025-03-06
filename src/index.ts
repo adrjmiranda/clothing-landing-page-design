@@ -1,7 +1,15 @@
+// Constants
+const ACTIVE_NAVBAR_CLASS: string = 'active';
+
+const HIDDEN_CLASS = '__hidden';
+const SHOW__CLASS: string = '__show';
+
+const LIGHT__CLASS: string = '__light';
+const DARK__CLASS: string = '__dark';
+
 /**
  * Change Navbar Background
  */
-const ACTIVE_NAVBAR_CLASS: string = 'active';
 
 const navbar = document.getElementById('navbar') as HTMLDivElement;
 
@@ -22,9 +30,9 @@ const toggleThemeButton = document.getElementById(
 
 toggleThemeButton?.addEventListener('click', () => {
 	(toggleThemeButton.querySelectorAll('i') as NodeListOf<HTMLElement>)?.forEach(
-		(icon) => icon.classList.toggle('__hidden')
+		(icon) => icon.classList.toggle(HIDDEN_CLASS)
 	);
 
-	document.body.classList.toggle('__light');
-	document.body.classList.toggle('__dark');
+	document.body.classList.toggle(LIGHT__CLASS);
+	document.body.classList.toggle(DARK__CLASS);
 });
