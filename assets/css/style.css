@@ -142,6 +142,16 @@ body.__dark .alt-text {
 	color: var(--primary-light-color);
 }
 
+body.__dark #navbar.active .logo span,
+body.__dark #navbar.active .navbar-link.alt-text {
+	color: var(--primary-dark-color);
+}
+
+body.__dark #navbar.active .logo,
+body.__dark #navbar.active #toggle-theme {
+	color: var(--secondary-dark-color);
+}
+
 body.__light #credit-area {
 	background-color: var(--primary-dark-color);
 	color: var(--secondary-light-color);
