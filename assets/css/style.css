@@ -78,12 +78,14 @@ body.__dark {
 }
 
 body.__light #home,
-body.__light #navbar {
+body.__light #navbar,
+body.__light #collection {
 	background-color: var(--primary-light-color);
 }
 
 body.__dark #home,
-body.__dark #navbar {
+body.__dark #navbar,
+body.__dark #collection {
 	background-color: var(--primary-dark-color);
 }
 
@@ -166,6 +168,7 @@ img {
 	margin-bottom: 2.5rem;
 	text-align: center;
 }
+
 /***************** NAVBAR *******************/
 #navbar {
 	height: var(--navbar-h);
@@ -327,5 +330,92 @@ img {
 	transform: scale(1.045);
 }
 /************** End of NEWS ***************/
+
+/***************** COLLECTION *******************/
+#collection {
+	height: auto;
+}
+
+.collection-content {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(4, auto);
+	column-gap: 3.75rem;
+}
+
+.collection-card {
+	height: 650px;
+}
+
+.collection-card:nth-child(1) {
+	grid-column: 2/3;
+	grid-row: 1/3;
+}
+
+.collection-card:nth-child(2) {
+	grid-column: 1/2;
+	grid-row: 2/4;
+}
+
+.collection-img {
+	height: 80%;
+}
+
+.collection-img img {
+	height: 100%;
+	object-fit: cover;
+	object-position: top center;
+}
+
+.collection-img img,
+.collection-info {
+	width: 70%;
+}
+
+.collection-info {
+	padding: 0.85rem;
+	display: grid;
+	grid-template-columns: 80% 20%;
+	grid-template-rows: repeat(2, 1fr);
+	row-gap: 0.25rem;
+}
+
+.collection-name,
+.collection-category {
+	grid-column: 1/2;
+}
+
+.collection-name {
+	grid-row: 1/2;
+	font-weight: var(--medium-fw);
+	color: var(--black-color-00);
+}
+
+.collection-category {
+	font-weight: var(--normal-fw);
+}
+
+.collection-icon {
+	grid-column: 2/3;
+	grid-row: 1/3;
+	font-size: var(--lg-fs);
+	opacity: 0.55;
+}
+
+.collection-icon:hover {
+	opacity: 1;
+	transform: scale(1.045);
+}
+
+.collection-card:nth-child(1) .collection-img img,
+.collection-card:nth-child(1) .collection-info {
+	margin-right: auto;
+}
+
+.collection-card:nth-child(2) .collection-img img,
+.collection-card:nth-child(2) .collection-info {
+	margin-left: auto;
+}
+/************** End of COLLECTION ***************/
 
 /***************** Responsiveness *******************/
