@@ -484,4 +484,36 @@ img {
 }
 /************** End of PRODUCTS ***************/
 
+/***************** BRANDS *******************/
+#brands {
+	padding-top: 3.5rem;
+	padding-bottom: 7rem;
+}
+
+.brands-content {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	align-items: center;
+	grid-template-rows: auto;
+	column-gap: 1.85rem;
+}
+
+.brand-img {
+	height: 100px;
+	width: 100%;
+	object-fit: contain;
+	object-position: center center;
+	background-color: rgba(0, 0, 0, 0.025);
+	padding: 1.75rem 0.85rem;
+}
+
+.brand-img:nth-child(odd) {
+	margin-top: -2rem;
+}
+
+.brand-img:nth-child(even) {
+	margin-bottom: -2rem;
+}
+/************** End of BRANDS ***************/
+
 /***************** Responsiveness *******************/
