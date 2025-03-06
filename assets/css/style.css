@@ -270,6 +270,9 @@ body.__dark #credit-area {
 .home-img img {
 	position: absolute;
 	height: 70%;
+	width: 63%;
+	object-fit: cover;
+	object-position: top center;
 }
 
 .home-img img:nth-child(1) {
