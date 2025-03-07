@@ -2,7 +2,7 @@
 const ACTIVE_NAVBAR_CLASS: string = 'active';
 
 const HIDDEN_CLASS = '__hidden';
-const SHOW__CLASS: string = '__show';
+// const SHOW__CLASS: string = '__show';
 
 const LIGHT__CLASS: string = '__light';
 const DARK__CLASS: string = '__dark';
@@ -45,41 +45,10 @@ toggleThemeButtons?.length &&
 	});
 
 /**
- * Toggle Menu
- */
-const toggleNavbarMenuButton = document.getElementById(
-	'toggle-menu'
-) as HTMLButtonElement;
-const navbarMenu = document.querySelector('.navbar-menu') as HTMLUListElement;
-
-const navbarMenuLinks = document.querySelectorAll(
-	'.navbar-link'
-) as NodeListOf<HTMLAnchorElement>;
-
-const toggleMenu = (): void => {
-	navbarMenu?.classList.toggle(SHOW__CLASS);
-
-	(
-		toggleNavbarMenuButton?.querySelectorAll('i') as NodeListOf<HTMLElement>
-	)?.forEach((icon) => icon.classList.toggle(HIDDEN_CLASS));
-};
-
-toggleNavbarMenuButton?.addEventListener('click', () => {
-	toggleMenu();
-});
-
-navbarMenuLinks?.length &&
-	navbarMenuLinks.forEach((link) =>
-		link.addEventListener('click', () => {
-			toggleMenu();
-		})
-	);
-
-/**
  * Products Slider
  */
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -90,10 +59,14 @@ const swiper = new Swiper('.swiper', {
 	loop: true,
 	loopAddBlankSlides: false,
 
-	modules: [Navigation],
+	modules: [Navigation, Autoplay],
 
 	slidesPerView: 1,
 	spaceBetween: 0,
+	autoplay: {
+		delay: 5000,
+		disableOnInteraction: false,
+	},
 
 	breakpoints: {
 		768: {
@@ -103,6 +76,7 @@ const swiper = new Swiper('.swiper', {
 		576: {
 			slidesPerView: 2,
 			spaceBetween: '2%',
+			autoplay: false,
 		},
 	},
 
