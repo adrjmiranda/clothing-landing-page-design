@@ -78,42 +78,46 @@ navbarMenuLinks?.length &&
 /**
  * Products Slider
  */
-const productItemsBox = document.querySelector(
-	'.product-items'
-) as HTMLDivElement;
+import Swiper from 'swiper';
+import { Navigation } from 'swiper/modules';
 
-let isMouseDown: boolean = false;
-let startX: number;
-let scrollLeft: number;
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-productItemsBox.addEventListener('mousedown', (e: MouseEvent) => {
-	isMouseDown = true;
-	startX = e.pageX - productItemsBox.offsetLeft;
-	scrollLeft = productItemsBox.scrollLeft;
+const swiper = new Swiper('.swiper', {
+	direction: 'horizontal',
+	loop: true,
+	loopAddBlankSlides: false,
 
-	productItemsBox.style.cursor = 'grabbing';
+	modules: [Navigation],
+
+	slidesPerView: 1,
+	spaceBetween: 0,
+
+	breakpoints: {
+		768: {
+			slidesPerView: 3,
+			spaceBetween: '2%',
+		},
+		576: {
+			slidesPerView: 2,
+			spaceBetween: '2%',
+		},
+	},
+
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	},
 });
 
-productItemsBox.addEventListener('mouseleave', () => {
-	isMouseDown = false;
-	productItemsBox.style.cursor = 'grab';
-});
-
-productItemsBox.addEventListener('mouseup', () => {
-	isMouseDown = false;
-	productItemsBox.style.cursor = 'grab';
-});
-
-productItemsBox.addEventListener('mousemove', (e: MouseEvent) => {
-	if (!isMouseDown) return;
-
-	e.preventDefault();
-
-	const x: number = e.pageX - productItemsBox.offsetLeft;
-	const walk: number = (x - startX) * 2;
-
-	productItemsBox.scrollLeft = scrollLeft - walk;
-});
+document
+	.querySelector('.swiper-button-prev')
+	.classList.add('ri-arrow-left-line');
+document
+	.querySelector('.swiper-button-next')
+	.classList.add('ri-arrow-right-line');
 
 /**
  * Scroll Reveal Animation
@@ -183,24 +187,6 @@ ScrollReveal().reveal('.collection-card:nth-child(2)', {
 	mobile: true,
 	reset: true,
 });
-
-// Products
-const productCardsNumber: number =
-	(document.querySelectorAll('.product-card') as NodeListOf<HTMLDivElement>)
-		?.length ?? 0;
-
-for (let i = 0; i < productCardsNumber; i++) {
-	ScrollReveal().reveal(`.product-card:nth-child(${i + 1})`, {
-		opacity: 0,
-		origin: 'bottom',
-		distance: '5%',
-		duration: 1750,
-		delay: 250 * (i + 1),
-		easing: 'ease-in-out',
-		mobile: true,
-		reset: true,
-	});
-}
 
 // Brands
 const brandItemsNumber: number =
